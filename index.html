@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Meal Cook Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-overlay">
+            <h1><br></h1>
+        </div>
+        <!-- Wrap the image with an <a> tag to make it clickable -->
+        <a href="page1.html">
+            <img id="book-cover" src="cover3.png" alt="Description of the image">
+        </a>
+        <div class="tabs">
+            <a href="page1.html">
+                <button class="tab">Meals</button>
+            </a>
+            <a href="page2.html">
+                <button class="tab">Desserts</button>
+            </a>
+            <a href="page3.html">
+                <button class="tab">Snacks</button>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-image: url('desk.png');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        img {
+            max-width: 80%; /* Image takes 80% of the screen width */
+            height: auto;
+        }
+
+        /* Style for the text */
+        .text-overlay {
+            position: absolute;
+            text-align: center;
+            z-index: 10;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            font-size: 2.5em;
+            text-shadow: none;
+            top: 20%; /* Position the text overlay */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Style for the tabs */
+        .tabs {
+            position: absolute;
+            z-index: 20;
+            display: flex;
+            flex-direction: column; /* Stack tabs vertically */
+            gap: 20px; /* Space between the tabs */
+        }
+
+        .tab {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the links to remove default styling */
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        // JavaScript to adjust the tabs position relative to the cover image
+        window.addEventListener('load', () => {
+            const bookCover = document.getElementById('book-cover');
+            const tabs = document.querySelector('.tabs');
+
+            const adjustTabsPosition = () => {
+                const coverRect = bookCover.getBoundingClientRect();
+                tabs.style.top = `${coverRect.top}px`;
+                tabs.style.left = `${coverRect.right}px`;
+            };
+
+            // Adjust the tabs position on load and resize
+            adjustTabsPosition();
+            window.addEventListener('resize', adjustTabsPosition);
+        });
+    </script>
+</body>
+
+</html>
