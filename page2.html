@@ -13,21 +13,24 @@
         <div class="text-overlay">
             <h1><br></h1>
         </div>
-        <!-- Wrap the image with an <a> tag to make it clickable -->
-        <a href="mealpage1.html">
-            <img id="book-cover" src="cover3.png" alt="Description of the image">
-        </a>
+        <img id="book-cover" src="dessertpage2.png" alt="Description of the image">
         <div class="tabs">
+            <!-- Tab 1 is hidden using the 'hidden' class -->
             <a href="page1.html">
                 <button class="tab">Meals</button>
             </a>
             <a href="page2.html">
-                <button class="tab">Desserts</button>
+                <button class="tab hidden">Tab 1</button>
             </a>
             <a href="page3.html">
                 <button class="tab">Snacks</button>
             </a>
         </div>
+
+        <!-- "Close Book" button at the bottom -->
+        <a href="index.html">
+            <button class="close-button">Close Book</button>
+        </a>
     </div>
 
     <style>
@@ -50,6 +53,8 @@
             align-items: center;
             height: 100%;
             width: 100%;
+            flex-direction: column; /* Stack content vertically */
+            padding-bottom: 20px; /* Add padding to ensure the button is visible at the bottom */
         }
 
         img {
@@ -96,6 +101,29 @@
 
         .tab:hover {
             background-color: #45a049;
+        }
+
+        /* Hide the first tab but keep it in the HTML */
+        .tab.hidden {
+            display: none;
+        }
+
+        /* Style for the Close Book button */
+        .close-button {
+            background-color: #f44336; /* Red color for the button */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .close-button:hover {
+            background-color: #d32f2f; /* Darker red on hover */
         }
 
         /* Style for the links to remove default styling */
